@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, TextInput, View, Image, ImageBackground } from 'react-native';
 import Forecast from './Forecast';
-import { getForecast, getForecastByCityName } from "./util/open_weather_map"
+import { getForecast, getForecastByCityName } from "../util/open_weather_map"
 
 export default class Weather extends React.Component {
 
@@ -32,10 +32,10 @@ export default class Weather extends React.Component {
     return (
       <View style={styles.container}>
         <ImageBackground
-          source={{uri:"https://github.com/bonniee/learning-react-native/blob/master/src/weather/flowers.png"}}
-          // resizeMode="cover"
-          style={{...styles.backdrop}}
-          >
+          // source={require("../image/flowers.png")}
+          source={{uri:"https://www.viewbug.com/media/mediafiles/2016/04/30/65766312_large1300.jpg"}}
+          resizeMode="cover"
+          style={styles.backdrop} >
           <View style={styles.overlay}>
             <View style={styles.row}>
               <Text style={styles.mainText}>
@@ -43,7 +43,7 @@ export default class Weather extends React.Component {
               </Text>
               <View style={styles.zipContainer} >
                 <TextInput
-                  style={styles.input}
+                  style={[styles.zipCode, styles.mainText]}
                   onSubmitEditing={this._handleTextChange}/>
               </View>
             </View>
@@ -53,16 +53,14 @@ export default class Weather extends React.Component {
       </View>
     );
   }
-
 }
 const baseFontSize = 16;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#666666',
     alignItems: 'center',
-    paddingTop: 30
+    paddingTop: 30,
   },
   backdrop: {
     flex:1,
