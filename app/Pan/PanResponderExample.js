@@ -1,7 +1,3 @@
-
-// Adapted from https://github.com/facebook/react-native/blob/master/
-// Examples/UIExplorer/PanResponderExample.js
-
 "use strict";
 
 import React, { Component } from "react";
@@ -75,8 +71,6 @@ class PanResponderExample extends Component {
         );
     }
 
-    // _highlight and _unHighlight get called by PanResponder methods,
-    // providing visual feedback to the user.
     _highlight = () => {
         this.circle &&
         this.circle.setNativeProps({
@@ -89,18 +83,15 @@ class PanResponderExample extends Component {
         this.circle.setNativeProps({ style: { backgroundColor: CIRCLE_COLOR } });
     };
 
-    // We're controlling the circle's position directly with setNativeProps.
     _updatePosition = () => {
         this.circle && this.circle.setNativeProps(this._circleStyles);
     };
 
     _handleStartShouldSetPanResponder = (event, gestureState) => {
-        // Should we become active when the user presses down on the circle?
         return true;
     };
 
     _handleMoveShouldSetPanResponder = (event, gestureState) => {
-        // Should we become active when the user moves a touch over the circle?
         return true;
     };
 
