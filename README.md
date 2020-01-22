@@ -1,4 +1,4 @@
-# react-native
+# react-native-study
 ```
 npm install
 yarn start
